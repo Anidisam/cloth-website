@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Category Images</title>
+  <style>
+ .image-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4 images per row */
+      gap: 10px; /* space between the images */
+      padding: 20px;
+    }
+
+    .image-grid img {
+      width: 100%;
+      height: auto;
+      display: block;
+      cursor: pointer; /* Makes the images clickable */
+      border: 2px solid transparent;
+    }
+
+    /* Style for selected images */
+    .image-grid img.selected {
+      border: 2px solid blue; /* Change the border when an image is selected */
+      opacity: 0.7; /* Slightly fade the image when selected */
+    }
+
+    h2 {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h2>Image Category Page</h2>
+  <div class="image-grid">
+    <!-- 40 images -->
+    <img src="./images/dress1.jpg" alt="Image 1" />
+    <img src="./images/dress2.jpeg" alt="Image 2" />
+    <img src="./images/dress3.avif" alt="Image 3" />
+    <img src="./images/dress4.jpg" alt="Image 4" />
+    <img src="./images/dress5.jpg" alt="Image 5" />
+    <img src="./images/dress6.jpg" alt="Image 6" />
+    <img src="./images/dress7.jpg" alt="Image 7" />
+    <img src="./images/dress8.jpg" alt="Image 8" />
+    <img src="./images/dress9.jpg" alt="Image 9" />
+    <img src="./images/dress10.jpg" alt="Image 10" />
+    <img src="./images/dress11.jpg" alt="Image 11" />
+    <img src="./images/dress12.jpg" alt="Image 12" />
+    <!-- ...repeat until you have 40 images -->
+  </div>
+
+   <script>
+    // Select the image grid container
+    const imageGrid = document.getElementById('imageGrid');
+
+    // Add an event listener for when the user clicks on an image
+    imageGrid.addEventListener('click', function (e) {
+      // Check if the clicked element is an image
+      if (e.target.tagName === 'IMG') {
+        // Toggle the "selected" class to indicate selection
+        e.target.classList.toggle('selected');
+      }
+    });
+  </script>
+</body>
+</html>
